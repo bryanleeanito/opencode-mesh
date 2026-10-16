@@ -1,0 +1,68 @@
+# Konfigurasi OpenCode Mesh
+# 3 mesin kolaborasi: Tablet, School, Windows
+
+machines:
+  tablet:
+    role: analysis
+    ip: 192.168.1.100
+    ssh_port: 22
+    opencode_port: 3000
+    kits:
+      - sherlock-osint
+      - ctf-decoder
+      - ctf-misc-solver
+    capabilities:
+      - osint
+      - source_review
+      - reporting
+
+  school:
+    role: field_ops
+    ip: 192.168.1.101
+    ssh_port: 22
+    opencode_port: 3000
+    kits:
+      - waf-bypass
+      - sqli-helper
+      - payload-generator
+    capabilities:
+      - bypass
+      - exploit
+      - payload
+
+  windows:
+    role: development
+    ip: 192.168.1.102
+    ssh_port: 22
+    opencode_port: 3000
+    kits:
+      - windev-specialist
+      - security-protect
+    capabilities:
+      - dev
+      - build
+      - test
+
+# Task routing rules
+routing:
+  osint: tablet
+  source_review: tablet
+  reporting: tablet
+  bypass: school
+  exploit: school
+  payload: school
+  dev: windows
+  build: windows
+  test: windows
+
+# Sync settings
+sync:
+  interval: 300  # 5 minutes
+  auto_pull: true
+  auto_push: false
+
+# Security
+security:
+  encrypt_state: true
+  redact_output: true
+  audit_log: true
