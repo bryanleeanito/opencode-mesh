@@ -32,9 +32,9 @@ Dibuat 2026-10-16.
 
 | Mesin | Peran | Kategori Kit |
 |---|---|---|
-| **Tablet** | Analisa, OSINT, source review, report | sherlock-osint, code-audit, report |
-| **School** | Recon, bypass, exploit, payload | waf-bypass, sqli-helper, payload-gen |
-| **Windows** | Dev, build, deploy, test | windev-specialist, security-protect |
+| **Kali Linux** | Attack & Eksekusi — pentest, bypass, exploit, payload, scanning | waf-bypass, sqli-helper, payload-generator, firewall-bypass |
+| **Tablet** | Specialist Analysis — OSINT, analisa temuan, source review, reporting | sherlock-osint, ctf-decoder, code-audit, report-packer |
+| **Windows** | Specialist Development + DevOps — build, deploy, automasi | windev-specialist, security-protect, extreme-efficiency |
 
 ## Cara Pakai
 

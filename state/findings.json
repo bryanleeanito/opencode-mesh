@@ -1,0 +1,9 @@
+[
+  {
+    "id": "F-20261016020503",
+    "type": "finding",
+    "message": "test finding",
+    "author": "localhost",
+    "created": "2026-10-16T02:05:03.106897"
+  }
+]

@@ -2,33 +2,45 @@
 # 3 mesin kolaborasi: Tablet, School, Windows
 
 machines:
+  kali:
+    role: attack
+    ip: 192.168.1.100
+    ssh_port: 22
+    opencode_port: 3000
+    kits:
+      - waf-bypass
+      - cloudflare-bypass
+      - sqli-helper
+      - payload-generator
+      - webshell-manager
+      - firewall-bypass
+      - ip-changer
+      - ip-anti-lock
+      - defense-counter
+    capabilities:
+      - pentest
+      - bypass
+      - exploit
+      - payload
+      - scanning
+
   tablet:
     role: analysis
-    ip: 192.168.1.100
+    ip: 192.168.1.101
     ssh_port: 22
     opencode_port: 3000
     kits:
       - sherlock-osint
       - ctf-decoder
       - ctf-misc-solver
+      - code-audit
+      - report-packer
     capabilities:
       - osint
+      - analysis
       - source_review
       - reporting
-
-  school:
-    role: field_ops
-    ip: 192.168.1.101
-    ssh_port: 22
-    opencode_port: 3000
-    kits:
-      - waf-bypass
-      - sqli-helper
-      - payload-generator
-    capabilities:
-      - bypass
-      - exploit
-      - payload
+      - correlation
 
   windows:
     role: development
@@ -38,22 +50,31 @@ machines:
     kits:
       - windev-specialist
       - security-protect
+      - extreme-efficiency
     capabilities:
       - dev
+      - devops
       - build
-      - test
+      - deploy
+      - automasi
 
 # Task routing rules
 routing:
+  pentest: kali
+  bypass: kali
+  exploit: kali
+  payload: kali
+  scanning: kali
   osint: tablet
+  analysis: tablet
   source_review: tablet
   reporting: tablet
-  bypass: school
-  exploit: school
-  payload: school
+  correlation: tablet
   dev: windows
+  devops: windows
   build: windows
-  test: windows
+  deploy: windows
+  automasi: windows
 
 # Sync settings
 sync:
